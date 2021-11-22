@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navigation_search">
+
+    <fragment android:id="@+id/navigation_search"
+        android:name="com.maris_skrivelis.tet_task.ui.search.SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+
+</navigation>
