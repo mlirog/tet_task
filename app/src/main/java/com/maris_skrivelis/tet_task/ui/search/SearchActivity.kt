@@ -1,7 +1,8 @@
-package com.maris_skrivelis.tet_task
+package com.maris_skrivelis.tet_task.ui.search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.maris_skrivelis.tet_task.R
 
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
