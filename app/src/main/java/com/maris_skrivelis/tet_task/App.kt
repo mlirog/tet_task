@@ -1,7 +1,6 @@
 package com.maris_skrivelis.tet_task
 
 import android.app.Application
-import androidx.databinding.library.BuildConfig
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import com.maris_skrivelis.tet_task.common.LineNumberDebugTree
