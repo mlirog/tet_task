@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.maris_skrivelis.tet_task.common.PROVIDED_FILE_NAME
 import com.maris_skrivelis.tet_task.common.getFileFromAssets
+import com.maris_skrivelis.tet_task.common.launchMain
 import com.maris_skrivelis.tet_task.databinding.FragmentSearchBinding
 import com.maris_skrivelis.tet_task.ui.search.adapters.SearchResultsAdapter
+import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 
 class SearchFragment: SearchBaseFragment() {
@@ -15,7 +17,7 @@ class SearchFragment: SearchBaseFragment() {
     private lateinit var binding: FragmentSearchBinding
     private val adapter by lazy {
         SearchResultsAdapter {
-           // Do something
+           Timber.d("Item clicked : $it")
         }
     }
 
@@ -31,8 +33,8 @@ class SearchFragment: SearchBaseFragment() {
         binding.resultList.adapter = adapter
 
         launchMain {
-            viewModel.avatarList.collect { colors ->
-                adapter.avatars = colors
+            viewModel.lineList.collect { results ->
+                adapter.results = results
             }
         }
     }

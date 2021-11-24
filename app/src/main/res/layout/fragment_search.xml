@@ -19,13 +19,18 @@
         android:importantForAutofill="no"
         tools:ignore="LabelFor" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/result_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginVertical="@dimen/margin_normal"
+        android:layout_gravity="center_horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number_input" />
+        app:layout_constraintEnd_toEndOf="@id/number_input"
+        app:layout_constraintStart_toStartOf="@id/number_input"
+        app:layout_constraintTop_toBottomOf="@id/number_input"
+        app:spanCount="2"
+        tools:itemCount="10"
+        tools:listitem="@layout/row_result_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

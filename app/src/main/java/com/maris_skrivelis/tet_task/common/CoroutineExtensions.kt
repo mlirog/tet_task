@@ -1,4 +1,4 @@
-package com.testdevlab.chatclone.common
+package com.maris_skrivelis.tet_task.common
 
 import kotlinx.coroutines.*
 import timber.log.Timber

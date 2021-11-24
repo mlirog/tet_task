@@ -17,6 +17,7 @@
 
     <!--    Custom dimens       -->
     <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
     <dimen name="height_normal">48dp</dimen>
     <dimen name="border_small">1.5dp</dimen>
 </resources>

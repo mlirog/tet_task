@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.TetTask" >
-        <activity android:name=".ui.search.SearchActivity">
+        <activity android:name=".ui.search.SearchActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,32 +4,31 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.maris_skrivelis.tet_task.databinding.RowResultItemBinding
 import kotlin.properties.Delegates
 
-class SearchResultsAdapter : RecyclerView.Adapter<SearchResultsAdapter.ViewHolder>() {
-
-//    var avatars: List<AvatarColorpickerItem> by Delegates.observable(emptyList(), { _, old, new ->
-//        DiffUtil.calculateDiff(ColorDiff(old, new)).dispatchUpdatesTo(this)
-//    })
+class SearchResultsAdapter(
+    private val onResultClick: (result: String) -> Unit,
+) : RecyclerView.Adapter<SearchResultsAdapter.ViewHolder>() {
 
     var results: List<String> by Delegates.observable(emptyList(), { _, old, new ->
         DiffUtil.calculateDiff(TextDiff(old, new)).dispatchUpdatesTo(this)
     })
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ViewHolder(RowAvatarItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        ViewHolder(RowResultItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val avatar = avatars[position]
-        holder.binding.avatar = avatar
+        val result = results[position]
+        holder.binding.result = result
         holder.binding.avatarBack.setOnClickListener {
-            onColorClick(avatar)
+            onResultClick(result)
         }
     }
 
     override fun getItemCount() = results.size
 
-    inner class ViewHolder(val binding: RowAvatarItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(val binding: RowResultItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     inner class TextDiff(
         private val oldItems: List<String>,
