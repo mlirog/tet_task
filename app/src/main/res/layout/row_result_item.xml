@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="result"
-            type="String" />
+            name="word"
+            type="com.maris_skrivelis.tet_task.ui.search.models.Word" />
     </data>
 
     <FrameLayout
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_normal"
-            android:text="@{result}"
+            android:text="@{word.wordAsString}"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="@dimen/text_size_big"

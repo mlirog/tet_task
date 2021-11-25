@@ -20,4 +20,8 @@
         <item name="android:minHeight">@dimen/height_normal</item>
         <item name="android:background">@drawable/bg_input</item>
     </style>
+
+    <style name="ProgressBarStyle" parent="Theme.TetTask">
+        <item name="android:indeterminateTint">@color/orange</item>
+    </style>
 </resources>

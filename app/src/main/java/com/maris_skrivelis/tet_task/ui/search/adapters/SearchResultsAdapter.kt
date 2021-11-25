@@ -5,13 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.maris_skrivelis.tet_task.databinding.RowResultItemBinding
+import com.maris_skrivelis.tet_task.ui.search.models.Word
 import kotlin.properties.Delegates
 
 class SearchResultsAdapter(
     private val onResultClick: (result: String) -> Unit,
 ) : RecyclerView.Adapter<SearchResultsAdapter.ViewHolder>() {
 
-    var results: List<String> by Delegates.observable(emptyList(), { _, old, new ->
+    var words: List<Word> by Delegates.observable(emptyList(), { _, old, new ->
         DiffUtil.calculateDiff(TextDiff(old, new)).dispatchUpdatesTo(this)
     })
 
@@ -19,20 +20,20 @@ class SearchResultsAdapter(
         ViewHolder(RowResultItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val result = results[position]
-        holder.binding.result = result
+        val word = words[position]
+        holder.binding.word = word
         holder.binding.avatarBack.setOnClickListener {
-            onResultClick(result)
+            onResultClick(word.wordAsString)
         }
     }
 
-    override fun getItemCount() = results.size
+    override fun getItemCount() = words.size
 
     inner class ViewHolder(val binding: RowResultItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     inner class TextDiff(
-        private val oldItems: List<String>,
-        private val newItems: List<String>
+        private val oldItems: List<Word>,
+        private val newItems: List<Word>
     ) : DiffUtil.Callback() {
 
         override fun getOldListSize() = oldItems.size
@@ -40,7 +41,7 @@ class SearchResultsAdapter(
         override fun getNewListSize() = newItems.size
 
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
-            oldItems[oldItemPosition] == newItems[newItemPosition]
+            oldItems[oldItemPosition].wordAsString == newItems[newItemPosition].wordAsString
 
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
             oldItems == newItems

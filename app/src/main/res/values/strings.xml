@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tet task</string>
+    <string name="search_button">Search</string>
 </resources>
