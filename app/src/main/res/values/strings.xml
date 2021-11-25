@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tet task</string>
+    <string name="error_loading_file">Unable to read file</string>
+    <string name="retry">Retry</string>
 </resources>

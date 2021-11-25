@@ -1,11 +1,13 @@
 package com.maris_skrivelis.tet_task.ui.search.viewmodels
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.maris_skrivelis.tet_task.common.launchIO
 import com.maris_skrivelis.tet_task.ui.search.models.Word
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
-import java.io.File
+import java.io.FileNotFoundException
+import java.lang.Exception
 
 class SearchViewModel: ViewModel()  {
 
@@ -16,13 +18,14 @@ class SearchViewModel: ViewModel()  {
     val isLoading: SharedFlow<Boolean> = _isLoading
     val wordList: SharedFlow<List<Word>> = _wordList
 
-    fun readFile(filePath: String) {
-        File(filePath).forEachLine { line ->
-            if (line.isNotBlank()) {
-                _fileWords.add(
-                    Word(line)
-                )
+    fun readFile(context: Context, fileName: String) {
+        try {
+            context.assets.open(fileName).reader().forEachLine { line ->
+                _fileWords.add(Word(line))
             }
+        } catch (e: Exception) {
+            //  Fragment class handles this and shows snackbar for it
+            throw FileNotFoundException()
         }
     }
 
