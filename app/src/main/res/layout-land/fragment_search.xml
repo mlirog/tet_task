@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="@id/number_input"
         app:layout_constraintStart_toStartOf="@id/number_input"
         app:layout_constraintTop_toBottomOf="@id/number_input"
-        app:spanCount="2"
+        app:spanCount="3"
         tools:itemCount="10"
         tools:listitem="@layout/row_result_item" />
 

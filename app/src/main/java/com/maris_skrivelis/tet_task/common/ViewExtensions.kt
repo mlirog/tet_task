@@ -1,10 +1,12 @@
 package com.maris_skrivelis.tet_task.common
 
 import android.os.Build
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 
 @Suppress("DEPRECATION")
 fun Fragment.showFullscreen(show: Boolean = true) {
@@ -29,4 +31,8 @@ fun Fragment.showFullscreen(show: Boolean = true) {
             }
         }
     }
+}
+
+fun View.showSnackbar(message: String) {
+    Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()
 }
