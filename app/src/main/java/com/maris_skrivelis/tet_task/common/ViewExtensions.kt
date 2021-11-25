@@ -7,6 +7,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import com.maris_skrivelis.tet_task.R
 
 @Suppress("DEPRECATION")
 fun Fragment.showFullscreen(show: Boolean = true) {
@@ -33,6 +34,13 @@ fun Fragment.showFullscreen(show: Boolean = true) {
     }
 }
 
-fun View.showSnackbar(message: String) {
-    Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()
+fun View.showSnackbar(message: String, length: Int = Snackbar.LENGTH_LONG, onRetry: (() -> Unit)? = null) {
+    val snackbar = Snackbar.make(this, message, length)
+    if (onRetry != null) {
+        snackbar.setAction(context.getString(R.string.retry)) {
+            snackbar.dismiss()
+            onRetry()
+        }
+    }
+    snackbar.show()
 }
