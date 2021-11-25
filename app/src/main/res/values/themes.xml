@@ -24,4 +24,5 @@
     <style name="ProgressBarStyle" parent="Theme.TetTask">
         <item name="android:indeterminateTint">@color/orange</item>
     </style>
+
 </resources>

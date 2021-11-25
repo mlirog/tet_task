@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/drawable-v24/bg_input.xml" value="0.2153846153846154" />
         <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/drawable-v24/bg_result.xml" value="0.23435897435897435" />
+        <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2153846153846154" />
+        <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2153846153846154" />
         <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/layout-land/fragment_search.xml" value="0.13977072310405644" />
         <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/maris/AndroidStudioProjects/tet_task/app/src/main/res/layout/row_result_item.xml" value="0.25" />

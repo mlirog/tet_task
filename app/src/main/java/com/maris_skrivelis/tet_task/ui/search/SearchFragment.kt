@@ -12,7 +12,6 @@ import com.maris_skrivelis.tet_task.common.showSnackbar
 import com.maris_skrivelis.tet_task.databinding.FragmentSearchBinding
 import com.maris_skrivelis.tet_task.ui.search.adapters.SearchResultsAdapter
 import kotlinx.coroutines.flow.collect
-import timber.log.Timber
 
 class SearchFragment: SearchBaseFragment() {
 

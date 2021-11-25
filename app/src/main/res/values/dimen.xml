@@ -15,7 +15,7 @@
     <dimen name="radius_normal">8dp</dimen>
     <dimen name="radius_small">4dp</dimen>
 
-    <!--    Custom dimens       -->
+    <!--    Custom dimens    -->
     <dimen name="text_size_normal">16sp</dimen>
     <dimen name="text_size_big">18sp</dimen>
     <dimen name="height_normal">48dp</dimen>

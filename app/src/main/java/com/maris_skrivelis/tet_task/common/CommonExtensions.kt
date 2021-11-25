@@ -29,8 +29,9 @@ fun Char.toDigit(): Char {
     }
 }
 
-fun String.toDigits(): String{
-    var letters = mutableListOf<Char>()
+fun String.toDigits(): String {
+    val letters = mutableListOf<Char>()
+
     this.uppercase().forEach { char ->
         letters.add(char.toDigit())
     }
